@@ -1,10 +1,12 @@
-from flask import Flask
-import time
+from flask import Flask, request
+import random
 
 app = Flask(__name__)
 
-@app.route('/time')
-def get_current_time():
+@app.route('/api/v1/generateRandomNumber')
+def generate_random_number():
+    lower_bound = request.args.get('lowerBound', default = 0, type = int)
+    upper_bound = request.args.get('upperBound', default = 0, type = int)
     return {
-        "time": time.time()
+        "randomNumber": random.randint(lower_bound, upper_bound)
     }
