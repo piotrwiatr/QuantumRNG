@@ -6,8 +6,12 @@ const Home = () => {
   return (
     <div class="container">
       <header>
-        <h1 className="logo"><a href="https://piotrwiatr.com">PW</a></h1>
-        <p><a href="https://piotrwiatr.com">piotrwiatr.com</a></p>
+        <div class="nav-group">
+          <a href="https://piotrwiatr.com" className="logo">PW</a>
+        </div>
+        <div class="nav-group">
+          <a href="https://piotrwiatr.com">piotrwiatr.com</a>
+        </div>
       </header>
       <section className="body">
         <div className="generator">
@@ -15,7 +19,7 @@ const Home = () => {
           <RandomNumberForm />
         </div>
         <div className="image">
-          <img src={quantumImage} height={200} alt="quantum mechanical equations" />
+          <img src={quantumImage} alt="quantum mechanical equations" />
         </div>
       </section>
     </div>
